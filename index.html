@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./style.css">
+    <title>Magic Caudron</title>
+</head>
+<body>
+<div class="video-container">
+    <video id="bgVideo1" class="background-video" autoplay loop muted>
+        <source src="./video/1.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <video id="bgVideo2" class="background-video" autoplay loop muted style="opacity: 0;">
+        <source src="./video/2.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</div>
+
+<main class="container">
+    <div class="row">
+        <div class="btn-container">
+            <button id="btnSerpent" type="button" class="btn-component"><img src="./img/serpent.png" alt=""></button>
+            <div id="cptSerpent" class="cpt"></div>
+        </div>
+        <div class="btn-container">
+            <button id="btnReset" type="button" class="btn-control">RESET</button>
+        </div>
+        <div class="btn-container">
+            <div id="cptAraignee" class="cpt"></div>
+            <button id="btnAraignee" type="button" class="btn-component"><img src="./img/araignee.jpg" alt=""></button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="btn-container">
+            <button id="btnChauvesouris" type="button" class="btn-component"><img src="./img/chauvesouris.jpg" alt=""></button>
+            <div id="cptChauvesouris" class="cpt"></div>
+        </div>
+        <div class="btn-container">
+            <button id="melangeBtn" type="button" class="btn-control">MELANGER</button>
+        </div>
+        <div class="btn-container">
+            <div id="cptChampignon" class="cpt"></div>
+            <button id="btnChampignon" type="button" class="btn-component"><img src="./img/champignon.jpg" alt=""></button>
+        </div>
+    </div>
+</main>
+
+<p id="win" class="msg hidden">Bravo tu as réussi la potion !</p>
+<p id="missed" class="msg hidden">Mauvaise combinaison !</p>
+
+<script type="module" src="./script.js" defer></script>
+</body>
+</html>
