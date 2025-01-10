@@ -1,73 +1,7 @@
-.btn-component {
-    display: flex;
-    justify-content: center;
-    padding: 36px 48px;
-    font-size: 14px;
-    color: white;
-    background-color: black;
-    border: none;
-    border-radius: 100%;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.btn-component:active {
-    transform: scale(0.9);
-}
-
-.btn-container{
-    display:flex;
-    align-items: center;
-    gap:1em;
-}
-
-.btn-control{
-    display: flex;
-    justify-content: center;
-    padding:24px 32px;
-    font-size: 10px;
-    color: white;
-    background-color: #000;
-    border: none;
-    border-radius: 100%;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    max-width:1em;
-}
-
-.btn-control:active{
-    transform: scale(0.9);
-}
-
-.cpt{
-    background-color: black;
-    color:white;
-    padding: 1em 1.5em;
-    border-radius: 50%;
-    font-size: large;
-}
-
-.row{
-    display: flex;
-    justify-content: space-between;
-}
-
-.container{
-    display:flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height:500px;
-    margin:3em 0.2em;
-    position: relative;
-    z-index: 1;
-}
-
-img{
-    width:75px;
-    height:75px;
-    border-radius: 100%;
+body, html {
+    width: 1800px;
+    height: 800px;
+    overflow: hidden;
 }
 
 .video-container {
@@ -77,33 +11,124 @@ img{
     width: 100%;
     height: 100%;
     overflow: hidden;
-    z-index: -1;
+    z-index: 1;
 }
 
 .background-video {
     position: absolute;
-    top: 0;
-    left: 0;
-    width:1200px;
-    height:700px;
+    top: -100px;
+    left: -50px;
+    width: 1750px;
+    height: 950px;
     object-fit: cover;
     transition: opacity 1s ease-in-out;
 }
 
-body, html {
-    width:1024px;
-    height:600px;
-    overflow: hidden;
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 700px;
+    margin: 3em 5em;
+    position: relative;
 }
 
-.hidden{
-    display:none;
+.row {
+    display: flex;
+    justify-content: space-around;
+    width: 1500px;
 }
 
-.msg{
+.btn-container {
+    display: flex;
+    align-items: center;
+    gap: 2em;
+    z-index: 15;
+}
+
+.btn-component {
+    display: flex;
+    justify-content: center;
+    background-color: transparent;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    transition: transform 0.1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-component:active {
+    transform: scale(0.85);
+}
+
+.btn-component img {
+    transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-component:active img {
+    transform: scale(0.95);
+}
+
+.cpt {
+    color: white;
+    font-size: xx-large;
+    position: relative;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cpt::before {
+    content: '';
     position: absolute;
-    top:40%;
-    right:20%;
-    color:white;
-    font-size: 3em;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('./assets/5.png');
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+}
+
+.btn-control {
+    display: flex;
+    background-color: transparent;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-control:active {
+    transform: scale(0.85);
+}
+
+.btn-control img {
+    transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-control:active img {
+    transform: scale(0.95);
+}
+
+img {
+    width: 150px;
+    height: 150px;
+}
+
+.msg {
+    position: absolute;
+    top: 35%;
+    right: 45%;
+    color: white;
+    font-size: 6em;
+    z-index: 20;
+}
+
+.hidden {
+    display: none;
 }

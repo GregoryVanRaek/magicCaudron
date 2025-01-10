@@ -10,8 +10,8 @@ const resetBtn = document.querySelector('#btnReset');
 const melangeBtn = document.querySelector('#melangeBtn');
 const bgVideo1 = document.querySelector('#bgVideo1');
 const bgVideo2 = document.querySelector('#bgVideo2');
-const winTitle = document.querySelector('#win')
 const missedTitle = document.querySelector('#missed');
+const sound = new Audio('./assets/sound.mp3')
 
 let cpt1, cpt2, cpt3, cpt4;
 let win = false;
@@ -23,12 +23,13 @@ function reset() {
     cpt4 = 0;
     bgVideo1.style.opacity = 1;
     bgVideo2.style.opacity = 0;
-    bgVideo1.src = './video/1.mp4'
+    bgVideo1.src = './assets/Chaudron.mp4'
+    bgVideo1.currentTime = 0;
     win = false;
     missedTitle.classList.add('hidden');
-    winTitle.classList.add('hidden');
     resetBtn.classList.remove('hidden');
     melangeBtn.classList.remove('hidden')
+    display();
 }
 
 function display() {
@@ -75,21 +76,27 @@ melangeBtn.addEventListener('click', () => {
     if (checkWinCondition()) {
         bgVideo1.style.opacity = 0;
         bgVideo2.style.opacity = 1;
+
+        sound.play();
+
         resetBtn.classList.add('hidden');
         melangeBtn.classList.add('hidden')
+        bgVideo2.currentTime = 0;
 
         setTimeout(() => {
-            bgVideo1.src = './video/2.mp4';
+            bgVideo1.src = './assets/Poison.mp4';
             bgVideo1.load();
-            winTitle.classList.remove('hidden');
         }, 1000);
 
         setTimeout(() => {
-            init();
-        },10000)
+            init()
+        }, 300000)
 
     } else {
         missedTitle.classList.remove('hidden')
+        setTimeout(() => {
+            init();
+        }, 1700)
     }
 });
 
